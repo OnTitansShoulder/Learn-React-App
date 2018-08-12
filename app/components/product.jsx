@@ -1,9 +1,33 @@
 import React from 'react'
 
-let Product = ({id, name, cost, handleClick}) => (
+/* the classical syntax */
+export default class Product extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+    console.log('Product is mounted')
+  }
+
+  render() {
+    let {id, name, cost, description, handleClick} = this.props
+    return (
+      <div>
+        {name}: ${cost} <span style={{color: 'blue'}}>{description}</span> &nbsp;
+        <button onClick={() => handleClick(id)}>Add to cart</button>
+      </div>
+    )
+  }
+}
+
+/* the ES7 syntax
+let Product = ({id, name, cost, description, handleClick}) => (
   <div>
-    {name}: ${cost} <button onClick={() => handleClick(id)}>Add to cart</button>
+    {name}: ${cost} <span style={{color: 'blue'}}>{description}</span> &nbsp;
+    <button onClick={() => handleClick(id)}>Add to cart</button>
   </div>
 )
 
 export default Product
+*/

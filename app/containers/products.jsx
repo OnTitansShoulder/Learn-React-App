@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { addToCart } from '../actions'
 import Products from '../components/products.jsx'
                       /*store.state*/
 function mapStateToProps(state) {
@@ -12,12 +13,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     handleClick(id) {
-      dispatch({
-        type: 'ADD_TO_CART',
-        payload: {
-          id
-        }
-      })
+      dispatch(addToCart(id))
     }
   }
 }

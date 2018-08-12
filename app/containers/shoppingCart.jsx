@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { removeFromCart } from '../actions'
 import ShoppingCart from '../components/shoppingCart.jsx'
 
 function getProductsInCart(products, shoppingCart) {
@@ -16,12 +17,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     handleClick(id) {
-      dispatch({
-        type: 'REMOVE_FROM_CART',
-        payload: {
-          id
-        }
-      })
+      dispatch(removeFromCart(id))
     }
   }
 }
