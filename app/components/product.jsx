@@ -11,11 +11,11 @@ export default class Product extends React.Component {
   }
 
   render() {
-    let {id, name, cost, description, handleClick} = this.props
+    let {id, name, cost, description, handleClick, btnText} = this.props
     return (
       <div>
         {name}: ${cost} <span style={{color: 'blue'}}>{description}</span> &nbsp;
-        <button onClick={() => handleClick(id)}>Add to cart</button>
+        <button onClick={() => handleClick(id)}>{btnText}</button>
       </div>
     )
   }

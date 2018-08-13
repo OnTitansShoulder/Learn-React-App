@@ -6,7 +6,7 @@ let Products = ({products, handleClick}) => (
     <h2>Our products</h2>
     <section>
       {products.map(product =>
-        <Product key={product.id} {...product} handleClick={handleClick} />)}
+        <Product key={product.id} {...product} handleClick={handleClick} btnText='Add to Cart' />)}
     </section>
   </section>
 )

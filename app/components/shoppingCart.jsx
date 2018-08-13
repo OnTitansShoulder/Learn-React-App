@@ -6,7 +6,7 @@ let ShoppingCart = ({products, handleClick}) => (
     <h2>Shopping Cart</h2>
     <section>
       {products.map(product =>
-        <Product key={product.id} {...product} handleClick={handleClick} />)}
+        <Product key={product.id} {...product} handleClick={handleClick} btnText='Remove' />)}
     </section>
   </section>
 )
